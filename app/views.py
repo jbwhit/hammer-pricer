@@ -3,8 +3,7 @@ from flask import render_template, jsonify, request
 from app import app
 import pymysql as mdb
 
-# db = mdb.connect(user="root", host="localhost", db="world_innodb", charset='utf8')
-con = mdb.connect('localhost', "root", "", 'test1') 
+con = mdb.connect('localhost', "root", "ozfgefgvrwix", 'test1') 
 
 @app.route('/')
 @app.route('/index')
