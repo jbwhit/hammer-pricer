@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Jonathan Whitmore">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>HammerPricer</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap theme -->
+    <link href="../static/css/bootstrap-theme.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="theme.css" rel="stylesheet">
+    <link href="../static/css/jquery.autocomplete.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+
+  </head>
+
+  <body role="document">
+
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">How it works</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+<br><br>
+
+    <div class="container theme-showcase" role="main">
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron" style="background-image: url(../static/images/20140911-insight.png); height=100%; background-position: -2000px 20px;" align="middle;" >
+      <!-- <img src="../static/images/20140820110359717818.test.png" width=100%; > -->
+        <h1>HammerPricer</h1>
+        <h2>Predicting auction prices for Abstract Expressionist art</h2>
+        <!-- <p><a href="#" class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p> -->
+      </div>
+
+
+      <!-- title,artist,auction_date,creation_date,auction_house,country,auction_house_low,auction_house_prediction,auction_house_high,hammer_price_low,hammer_price_prediction,hammer_price_high,sale_price,artkey,image -->
+
+    <div class="row">
+      {% for auction in auctions %}
+      <div class="col-md-7"><h2>{{ auction['title'] }} ({{ auction['creation_date'] }})</h2>
+        <h3>By: {{ auction['artist'] }}</h3>
+        <img src={{ auction['image'] }} width="80%" text-align="center">
+      </div>
+      <div class="col-md-5">
+        <br>
+        <h3>Actual Sale Price: {{ auction['sale_price'] }}</h3>
+        <br>
+        <table class="table table-hover" width="25%">
+          <tr><th style="text-align:center">Low </th><th style="text-align:center">HammerPricer Prediction</th><th style="text-align:center">High </th></tr>
+          <tr><td style="text-align:center">{{ auction['hammer_price_low'] }}</td><td style="text-align:center">{{ auction['hammer_price_prediction'] }}</td><td style="text-align:center">{{ auction['hammer_price_high'] }}</td></tr>
+        </table>
+        <br>
+        <table class="table table-hover" width="25%">
+          <tr><th style="text-align:center">Low </th><th style="text-align:center">{{ auction['auction_house'] }} Prediction</th><th style="text-align:center">High </th></tr>
+          <tr><td style="text-align:center">{{ auction['auction_house_low'] }}</td><td style="text-align:center">{{ auction['auction_house_prediction'] }}</td><td style="text-align:center">{{ auction['auction_house_high'] }}</td></tr>
+        </table>
+        <br>
+        <h4>Auction details</h4>
+        <table class="table table-hover" width="25%">
+          <tr><td>Auction Date:</td><td>{{ auction['auction_date'] }}</td></tr>
+          <tr><td>Auction House:</td><td>{{ auction['auction_house'] }}</td></tr>
+          <tr><td>Auction Country:</td><td>{{ auction['country'] }}</td></tr>
+        </table>
+        <br>
+      </div>
+      {% endfor %}
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <script type="text/javascript">
+    $( "#target" ).submit(function( event ) {
+      alert( $( "input:first" ).text() );
+      // event.preventDefault();
+    });
+    </script>
+    </div> <!-- /container -->
+
+  </body>
+</html>
