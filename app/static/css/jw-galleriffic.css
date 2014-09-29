@@ -66,6 +66,7 @@ div.slideshow span.image-wrapper {
     position: absolute;
     top: 120px;
     left: 0;
+    width: 600px;
 }
 div.slideshow a.advance-link {
     display: block;
@@ -84,7 +85,7 @@ div.slideshow a.advance-link:focus {
 
 div.slideshow img {
     border: none;
-    width: 80%;
+    width: 100%;
 }
 div.caption-container {
     float: right;
