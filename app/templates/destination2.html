@@ -53,8 +53,9 @@
       <!-- title,artist,auction_date,creation_date,auction_house,country,auction_house_low,auction_house_prediction,auction_house_high,hammer_price_low,hammer_price_prediction,hammer_price_high,sale_price,artkey,image -->
 
     <!-- Start Advanced Gallery Html Containers -->
-      <div class="navigation-container">
-        <div id="thumbs" class="navigation">
+    <div class="slideshow-container row">
+      <div class="navigation-container col-md-12">
+        <div id="thumbs" class="navigation col-md-12">
           <ul class="thumbs noscript">
           {% for auction in auctions %}
               <li>
@@ -65,26 +66,25 @@
                       <h2>{{ auction['title'] }} ({{ auction['creation_date'] }})</h2>
                       <h3>By: {{ auction['artist'] }}</h3>
                       <br>
-                              <h3>Actual Sale Price: {{ auction['sale_price'] }}</h3>
-        <br>
-        <table class="table table-hover" width="25%">
-          <tr><th style="text-align:center">Low </th><th style="text-align:center">HammerPricer Prediction</th><th style="text-align:center">High </th></tr>
-          <tr><td style="text-align:center">{{ auction['hammer_price_low'] }}</td><td style="text-align:center">{{ auction['hammer_price_prediction'] }}</td><td style="text-align:center">{{ auction['hammer_price_high'] }}</td></tr>
-        </table>
-        <br>
-        <table class="table table-hover" width="25%">
-          <tr><th style="text-align:center">Low </th><th style="text-align:center">{{ auction['auction_house'] }} Prediction</th><th style="text-align:center">High </th></tr>
-          <tr><td style="text-align:center">{{ auction['auction_house_low'] }}</td><td style="text-align:center">{{ auction['auction_house_prediction'] }}</td><td style="text-align:center">{{ auction['auction_house_high'] }}</td></tr>
-        </table>
-        <br>
-        <h4>Auction details</h4>
-        <table class="table table-hover" width="25%">
-          <tr><td>Auction Date:</td><td>{{ auction['auction_date'] }}</td></tr>
-          <tr><td>Auction House:</td><td>{{ auction['auction_house'] }}</td></tr>
-          <tr><td>Auction Country:</td><td>{{ auction['country'] }}</td></tr>
-        </table>
-        <br>
-
+                      <h3>Actual Sale Price: {{ auction['sale_price'] }}</h3>
+                      <br>
+                      <table class="table table-hover" width="100%">
+                        <tr><th style="text-align:center">Low </th><th style="text-align:center">HammerPricer Prediction</th><th style="text-align:center">High </th></tr>
+                        <tr><td style="text-align:center">{{ auction['hammer_price_low'] }}</td><td style="text-align:center">{{ auction['hammer_price_prediction'] }}</td><td style="text-align:center">{{ auction['hammer_price_high'] }}</td></tr>
+                      </table>
+                      <br>
+                      <table class="table table-hover" width="100%">
+                        <tr><th style="text-align:center">Low </th><th style="text-align:center">{{ auction['auction_house'] }} Prediction</th><th style="text-align:center">High </th></tr>
+                        <tr><td style="text-align:center">{{ auction['auction_house_low'] }}</td><td style="text-align:center">{{ auction['auction_house_prediction'] }}</td><td style="text-align:center">{{ auction['auction_house_high'] }}</td></tr>
+                      </table>
+                      <br>
+                      <h4>Auction details</h4>
+                      <table class="table table-hover" width="100%">
+                        <tr><td>Auction Date:</td><td>{{ auction['auction_date'] }}</td></tr>
+                        <tr><td>Auction House:</td><td>{{ auction['auction_house'] }}</td></tr>
+                        <tr><td>Auction Country:</td><td>{{ auction['country'] }}</td></tr>
+                      </table>
+                      <br>
                   </div>
               </li>
           {% endfor %}
@@ -94,15 +94,15 @@
           <div class="slideshow-container">
             <div id="controls" class="controls"></div>
             <div id="loading" class="loader"></div>
-            <div id="slideshow" class="slideshow"></div>
+            <div id="slideshow" class="slideshow col-md-8"></div>
           </div>
-          <div id="caption" class="caption-container">
+          <div id="caption" class="caption-container col-md-4">
             <div class="photo-index"></div>
           </div>
         </div>
 
         <div style="clear: both;"></div>
-
+</div>
     <br>
     <br>
     

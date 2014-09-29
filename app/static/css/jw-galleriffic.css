@@ -36,15 +36,13 @@ div.slideshow-container,
 div.loader,
 div.slideshow a.advance-link {
     /*width: 510px; */
-    width: 100%; /* This should be set to be at least the width of the largest image in the slideshow with padding */
+    width: 100%; 
 }
 
 div.loader,
 div.slideshow a.advance-link,
 div.caption-container {
-    /*height: 502px; */
     height: 100%; 
-    /* This should be set to be at least the height of the largest image in the slideshow with padding */    
 }
 
 div.slideshow-container {
@@ -72,7 +70,7 @@ div.slideshow span.image-wrapper {
 div.slideshow a.advance-link {
     display: block;
     line-height: 100%; 
-    text-align: center;
+    text-align: left;
 }
 
 div.slideshow a.advance-link:hover,
@@ -85,8 +83,7 @@ div.slideshow a.advance-link:focus {
 }
 
 div.slideshow img {
-    border-style: solid;
-    border-width: 1px;
+    border: none;
     width: 80%;
 }
 div.caption-container {
@@ -98,17 +95,15 @@ span.image-caption {
     display: block;
     position: absolute;
     top: 0;
-    left: 0;
+    left: 40%;
 }
 
 div.caption-container, span.image-caption {
-    /*width: 334px;*/
-    /*58.33333333*/
-    width: 41.66666667%;
+    width: 60%;
 }
 
 div.caption {
-    padding: 0 12px;
+    padding: 12px;
 }
 
 div.image-title {
@@ -187,7 +182,8 @@ div.pagination a, div.pagination span.current, div.pagination span.ellipsis {
     float: left;
     margin-right: 2px;
     padding: 4px 7px 2px 7px;
-    border: 1px solid #ccc;
+    /*border: 1px solid #ccc;*/
+    border: none;
 }
 div.pagination a:hover {
     text-decoration: none;
