@@ -12,6 +12,8 @@ def index():
         cur = con.cursor(mdb.cursors.DictCursor)
         cur.execute("SELECT * FROM Auctions LIMIT 12")
         rows = cur.fetchall()
+        for key in rows:
+            key['thumb'] = key['image'].split(".")[2] + "-thumb.jpg"
     return render_template('destination2.html', auctions=rows)
 
 @app.route('/db')
