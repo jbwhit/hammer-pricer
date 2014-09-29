@@ -58,8 +58,8 @@
           <ul class="thumbs noscript">
           {% for auction in auctions %}
               <li>
-                  <a class="thumb" name="optionalCustomIdentifier" href={{ auction['image'] }} title="{{ auction['title'] }}">
-                      <img src={{ auction['thumb'] }} alt="{{ auction['title'] }}" />
+                  <a class="thumb" name="optionalCustomIdentifier" href="{{ auction['image'] }}" title="{{ auction['title'] }}">
+                      <img src="{{ auction['thumb'] }}" alt="{{ auction['title'] }}" />
                   </a>
                   <div class="caption">
                       <h2>{{ auction['title'] }} ({{ auction['creation_date'] }})</h2>
