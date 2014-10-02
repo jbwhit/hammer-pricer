@@ -64,7 +64,7 @@ div.loader {
 div.slideshow span.image-wrapper {
     display: block;
     position: absolute;
-    top: 120px;
+    top: 30px;
     left: 0;
     width: 600px;
 }
