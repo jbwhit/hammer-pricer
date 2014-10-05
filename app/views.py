@@ -3,11 +3,10 @@ from flask import render_template, jsonify, request
 from app import app
 import pymysql as mdb
 
-con = mdb.connect('localhost', "root", "ozfgefgvrwix", 'test1') 
-
 @app.route('/')
 @app.route('/index')
 def index():
+    con = mdb.connect('localhost', "root", "ozfgefgvrwix", 'test1') 
     with con:
         cur = con.cursor(mdb.cursors.DictCursor)
         cur.execute("SELECT * FROM Auctions LIMIT 12")
